@@ -1,0 +1,11 @@
+<div class="content-wrapper">
+  <h3>Generuj QR dla:</h3>
+  <div>
+    <button mat-button 
+      *ngFor="let pageOption of pageOptions | keyvalue"
+      [disabled]="activePageOption === pageOption.value"
+      (click)="choosePageOption(pageOption.value)">{{ pageOption.value }}</button>
+  </div>
+  <qr-code-form [activePageInfo]="activePageInfo"></qr-code-form>
+  <qr-action-info [activePageInfo]="activePageInfo"></qr-action-info>
+</div>

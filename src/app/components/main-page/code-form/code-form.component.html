@@ -1,0 +1,16 @@
+<form (ngSubmit)="submitCode()">
+  <div class="form-group">
+    <h5>Kod {{ activePageInfo.genitive }}</h5>
+    <input
+      class="form-control"
+      type="text"
+      name="code"
+      [(ngModel)]="code"
+      placeholder="12345"
+    />
+    <p class="alert-msg" [ngStyle]="(!isValid && btnClicked) ? {'color': 'red'} : {'display': 'none'}">Błędny kod odbioru</p>
+    <button class="submit-btn" mat-flat-button color="warn" type="submit" [routerLink]="isValid ? ['qr/', code] : null">
+      {{ activePageInfo.imperative | titlecase }}
+    </button>
+  </div>
+</form>

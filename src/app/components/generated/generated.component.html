@@ -1,0 +1,14 @@
+<div class="content-wrapper">
+  <h3>Twój kod QR</h3>
+  <div class="info-wrapper">
+    <img class="info-qr-code" src="assets/{{qrCode}}" alt="qr-code"/>
+    <div class="info-text">
+      <h3 *ngIf="expectedExpirationDate">
+        Data ważności:<br />{{ expectedExpirationDate }}
+      </h3>
+      <h5 *ngIf="multicompartment">Multiskrytka</h5>
+      <h5 *ngIf="size !== null && size !== 'undefined'">Rozmiar: {{ size }}</h5>
+    </div>
+  </div>
+  <qr-action-info [activePageInfo]="sharedService.pageInfo"></qr-action-info>
+</div>
